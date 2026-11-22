@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Магазин — Хлоя, студия цветов в Сургуте</title>
+<meta name="description" content="Каталог цветов студии «Хлоя»: монобукеты, букеты, шляпные коробки, цветы в корзине. Доставка по Сургуту, самовывоз, сюрприз.">
+<meta name="robots" content="index,follow">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/market.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@400;500;600;700&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="logo" href="index.html">Хло<em>я</em></a>
+    <nav class="main-nav" id="main-nav">
+      <a href="shop.html">Каталог</a>
+      <a href="shop.html?offers=1">Предложения</a>
+      <a href="index.html#studios">Студии</a>
+      <a href="index.html#delivery">Доставка</a>
+      <a href="index.html#contacts">Контакты</a>
+    </nav>
+    <div class="header-actions">
+      <a class="phone-pill" href="tel:+79824184425">+7 (982) 418-44-25</a>
+      <button class="cart-btn" data-cart-open aria-label="Корзина">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 7h12l1 13H5L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+        <span class="cart-count" style="display:none">0</span>
+      </button>
+      <button class="burger" aria-label="Меню" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- МАГАЗИН -->
+<div id="shop-view">
+  <div class="container" style="padding-top:32px">
+    <div class="shop-layout">
+      <aside class="filters">
+        <h3>Фильтры</h3>
+        <div class="filter-group"><label>Категория</label><div id="f-category"></div></div>
+        <div class="filter-group"><label>Состав</label><div id="f-flower"></div></div>
+        <div class="filter-group"><label>Размер</label><div id="f-size"></div></div>
+        <div class="filter-group"><label>Цена до, ₽</label><input type="number" id="f-price" min="0" placeholder="Любая"></div>
+        <div class="filter-group"><label class="opt" style="display:flex;align-items:center;gap:8px"><input type="checkbox" id="f-pickup"> Только самовывоз</label></div>
+      </aside>
+      <div>
+        <div class="search-row"><input type="search" id="search" placeholder="Поиск по букетам…"><span class="count" id="count"></span></div>
+        <div class="toolbar"><span class="count" id="count2"></span><select class="sort-select" id="sort"><option value="popular">Популярные</option><option value="new">Новинки</option><option value="price-asc">Сначала дешевле</option><option value="price-desc">Сначала дороже</option></select></div>
+        <div class="products-grid" id="products-grid"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- АДМИНКА -->
+<div id="admin-view" class="hidden">
+  <div class="admin-bar" id="admin-bar">
+    <div class="container">
+      <span>Админка «Хлоя» · <b>тестовый режим</b></span>
+      <a href="shop.html" style="color:#fff">В магазин →</a>
+    </div>
+  </div>
+  <div class="container" style="padding:30px 0">
+    <div id="admin-panel"></div>
+  </div>
+</div>
+
+<!-- КОРЗИНА -->
+<dialog id="cart">
+  <div class="dialog-head"><h2>Корзина <span id="cart-count-inner" style="font-size:.9rem;color:var(--text-muted);font-weight:400"></span></h2><button class="dialog-close" aria-label="Закрыть">✕</button></div>
+  <div class="dialog-body">
+    <div id="cart-items"></div>
+    <div class="cart-total"><span>Итого</span><span id="cart-total">0 ₽</span></div>
+    <button class="btn btn--primary" id="to-order" style="width:100%">Оформить заказ</button>
+  </div>
+</dialog>
+
+<!-- ЗАКАЗ -->
+<dialog id="order">
+  <div class="dialog-head"><h2>Оформление заказа</h2><button class="dialog-close" aria-label="Закрыть">✕</button></div>
+  <div class="dialog-body" id="order-form-body">
+    <div class="method-tabs">
+      <button class="method-tab active" data-method="delivery">Доставка<small>привезём по адресу</small></button>
+      <button class="method-tab" data-method="surprise">Сюрприз<small>позвоним получателю</small></button>
+      <button class="method-tab" data-method="pickup">Самовывоз<small>из студии</small></button>
+    </div>
+    <div id="block-delivery">
+      <div class="field"><label>Район доставки</label><div id="zones"></div></div>
+      <div class="field"><label>Адрес доставки <span class="req">*</span></label><input id="o-address" placeholder="Улица, дом, квартира"><div class="err">Укажите адрес доставки</div></div>
+      <label class="radio-row"><input type="checkbox" id="o-self" checked> Получу сам (телефон получателя = мой)</label>
+      <div class="field hidden" id="field-recipient-delivery"><label>Телефон получателя <span class="req">*</span></label><input id="o-recipient-delivery" type="tel" placeholder="+7 ___ ___-__-__"><div class="err">Минимум 10 цифр</div></div>
+    </div>
+    <div id="block-surprise" class="hidden">
+      <div class="field"><p class="hint" style="margin-bottom:10px">Не знаете адрес? Оставьте телефон получателя — мы позвоним ему, уточним адрес и время, не раскрывая сюрприз.</p><label>Куда</label><div id="surprise-zones"></div></div>
+      <div class="field"><label>Телефон получателя <span class="req">*</span></label><input id="o-recipient-s" type="tel" placeholder="+7 ___ ___-__-__"><div class="err">Минимум 10 цифр</div></div>
+      <div class="field"><label>Что знаете об адресе · необязательно</label><textarea id="o-hint" rows="2"></textarea></div>
+    </div>
+    <div id="block-pickup" class="hidden">
+      <div class="field"><label>Студия</label><div id="branches"></div></div>
+    </div>
+    <div class="field"><label>Когда доставить / забрать</label><div class="calendar" id="calendar" data-field="calendar"></div><div class="slots" id="slots" data-field="slots"></div><p class="slot-note"></p></div>
+    <div class="field"><label>Ваше имя <span class="req">*</span></label><input id="o-name" placeholder="Как к вам обращаться"><div class="err">Имя — минимум 2 символа</div></div>
+    <div class="field"><label>Телефон <span class="req">*</span></label><input id="o-phone" type="tel" placeholder="+7 ___ ___-__-__"><div class="err">Минимум 10 цифр</div></div>
+    <div class="field"><label>Email (для чека)</label><input id="o-email" type="email" placeholder="you@example.com"></div>
+    <div class="field"><label>Пожелания или текст открытки · необязательно</label><textarea id="o-comment" rows="2"></textarea></div>
+    <div class="order-summary">
+      <div class="line"><span>Товары</span><span id="sum-products">0 ₽</span></div>
+      <div class="line"><span>Доставка</span><span id="sum-delivery">—</span></div>
+      <div class="total line"><span>Итого</span><span id="sum-total">0 ₽</span></div>
+    </div>
+    <label class="consent"><input type="checkbox" id="consent-data"> Согласен на обработку персональных данных (<a href="privacy.html" target="_blank">текст</a>)</label>
+    <label class="consent"><input type="checkbox" id="consent-offer"> Принимаю условия <a href="offer.html" target="_blank">публичной оферты</a></label>
+    <p class="hint" style="margin-bottom:14px;font-size:.8rem;color:var(--text-muted)">Данные нужны только для заказа, без рассылок · <a href="privacy.html">политика</a></p>
+    <button class="btn btn--primary" id="order-submit" style="width:100%">Оформить заказ</button>
+    <p id="order-result" style="color:#B91C1C;font-size:.9rem;margin-top:10px" aria-live="polite"></p>
+  </div>
+  <div class="dialog-body hidden" id="order-success">
+    <h2>Заказ принят 🎉</h2>
+    <p>Номер заказа: <b id="order-id"></b></p>
+    <p style="color:var(--text-muted);margin-top:8px"><b>Тестовый режим</b> — заказ никуда не отправляется. Мы свяжемся для подтверждения.</p>
+    <button class="btn btn--primary" id="order-again" style="margin-top:16px">Новый заказ</button>
+  </div>
+</dialog>
+
+<!-- КАРТОЧКА ТОВАРА -->
+<dialog id="detail">
+  <div class="dialog-head"><h2>Букет</h2><button class="dialog-close" aria-label="Закрыть">✕</button></div>
+  <div class="dialog-body"><div class="detail-grid"></div></div>
+</dialog>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand">Хло<em>я</em></div>
+        <p class="footer-note">Студия цветов в Сургуте. Собираем букеты вручную и привозим в день заказа.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Контакты</h4>
+        <ul><li><a href="tel:+79824184425">+7 (982) 418-44-25</a></li><li>Комсомольский пр-т, 15, 1 этаж</li><li>Ежедневно 09:00–20:00</li></ul>
+      </div>
+      <div class="footer-col">
+        <h4>Магазин</h4>
+        <ul><li><a href="shop.html">Каталог</a></li><li><a href="shop.html?offers=1">Предложения</a></li><li><a href="index.html#delivery">Доставка</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4>Продавец и документы</h4>
+        <ul><li>[Реквизиты — этап 3]</li><li><a href="privacy.html">Политика обработки ПДн</a></li><li><a href="consent.html">Согласие на обработку</a></li><li><a href="offer.html">Публичная оферта</a></li><li><a href="requisites.html">Реквизиты</a></li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Хлоя (Сургут)</span>
+      <!-- Бинк: знак «Сделано вместе с Бинк», белый — для тёмного фона. https://b-inc.ru -->
+      <a class="binc-made binc-made--white" href="https://b-inc.ru/" target="_blank" rel="noopener"><span class="binc-made__muted">Сделано вместе&nbsp;с</span> <span class="binc-made__name">Бинк</span></a>
+    </div>
+  </div>
+</footer>
+
+<div class="contact-dock">
+  <a href="tel:+79824184425">☎ Позвонить</a>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/app.js"></script>
+<script src="js/market.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

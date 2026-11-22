@@ -1,0 +1,187 @@
+/* Хлоя · дизайн-система · синяя гамма (токены как у VΛΖΛ) */
+:root{
+  --bg-primary:#F5F7FB;
+  --bg-card:#FFFFFF;
+  --bg-sand:#E8EEF7;
+  --bg-sand-light:#EEF2F9;
+  --bg-olive:#1E3A8A;
+  --bg-olive-hover:#16306F;
+  --bg-olive-light:#E3EAFB;
+  --text-dark:#1A1F2E;
+  --text-muted:#5B6577;
+  --text-light:#FBF8F6;
+  --text-olive:#1E3A8A;
+  --border-subtle:rgba(26,31,46,.08);
+  --border-card:#E1E6F0;
+  --border-olive:#3B5BB8;
+  --accent-gold:#7DD3FC;
+  --accent-gold-text:#1D4ED8;
+  --accent-terracotta:#2563EB;
+  --badge-new:#1A1F2E;
+  --bg-footer:#0B1F4B;
+  --text-footer:#FBF8F6;
+  --font-serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --font-sans:'Montserrat',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+  --font-cursive:'Caveat','Segoe Script',cursive;
+  --container-max:1380px;
+  --header-height:80px;
+  --shadow-card:0 10px 30px rgba(26,31,46,.05);
+  --shadow-hover:0 18px 40px rgba(26,31,46,.09);
+  --ease:cubic-bezier(0.23,1,0.32,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg-primary);color:var(--text-dark);font-family:var(--font-sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--accent-terracotta);text-decoration:none}
+a:hover{text-decoration:underline}
+button{font-family:inherit;cursor:pointer}
+.container{max-width:var(--container-max);margin:0 auto;padding:0 clamp(16px,4vw,48px)}
+:focus-visible{outline:2px solid var(--accent-terracotta);outline-offset:3px;border-radius:4px}
+::selection{background:var(--bg-olive);color:var(--text-light)}
+h1,h2,h3,h4{font-family:var(--font-serif);font-weight:600;line-height:1.1;letter-spacing:-.01em}
+.hidden{display:none!important}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* кнопки */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:999px;border:1.5px solid transparent;font-weight:600;font-size:.95rem;transition:transform .25s var(--ease),background .25s var(--ease),color .25s var(--ease),box-shadow .25s var(--ease);text-decoration:none}
+.btn:hover{text-decoration:none}
+.btn:active{transform:scale(.97)}
+@media(hover:hover){.btn:hover{transform:translateY(-1px)}}
+.btn--primary{background:var(--bg-olive);color:var(--text-light)}
+.btn--primary:hover{background:var(--bg-olive-hover)}
+.btn--ghost{background:transparent;border-color:var(--border-olive);color:var(--text-olive)}
+.btn--ghost:hover{background:var(--bg-olive-light)}
+.btn--terracotta{background:var(--accent-terracotta);color:#fff}
+.btn--small{padding:10px 20px;font-size:.85rem}
+
+/* шапка */
+.site-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border-subtle);height:var(--header-height)}
+.site-header .container{height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{font-family:var(--font-serif);font-size:1.7rem;font-weight:700;color:var(--text-dark);text-decoration:none;letter-spacing:-.01em}
+.logo em{font-style:italic;color:var(--accent-terracotta)}
+.main-nav{display:flex;gap:26px;align-items:center}
+.main-nav a{color:var(--text-dark);font-size:.92rem;font-weight:500;text-decoration:none;position:relative}
+.main-nav a::after{content:"";position:absolute;left:0;bottom:-4px;height:2px;width:100%;background:var(--accent-terracotta);transform:scaleX(0);transform-origin:0 50%;transition:transform .25s var(--ease)}
+.main-nav a:hover::after{transform:scaleX(1)}
+.header-actions{display:flex;gap:14px;align-items:center}
+.cart-btn{position:relative;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:12px;border:1.5px solid var(--border-card);background:var(--bg-card);color:var(--text-dark)}
+.cart-count{position:absolute;top:-6px;right:-6px;min-width:20px;height:20px;border-radius:10px;background:var(--accent-terracotta);color:#fff;font-size:.72rem;font-weight:700;display:flex;align-items:center;justify-content:center;padding:0 5px}
+.burger{display:none;width:44px;height:44px;border-radius:12px;border:1.5px solid var(--border-card);background:var(--bg-card);font-size:1.2rem}
+.phone-pill{font-weight:600;color:var(--text-olive)}
+
+/* hero */
+.hero{position:relative;overflow:hidden;background:var(--bg-sand-light)}
+.hero-track{display:flex;transition:transform .45s var(--ease)}
+.hero-slide{flex:0 0 100%;position:relative;min-height:min(70vh,620px);display:flex;align-items:center}
+.hero-slide picture,.hero-slide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-slide::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,31,75,.72) 0%,rgba(11,31,75,.35) 55%,transparent 100%)}
+.hero-copy{position:relative;z-index:2;color:#fff;max-width:640px;padding:60px 0}
+.hero-copy h1{font-size:clamp(2.4rem,6vw,4.6rem);color:#fff;margin-bottom:18px}
+.hero-copy p{font-size:1.1rem;opacity:.92;max-width:48ch;margin-bottom:30px}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+.hero-dots{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:3}
+.hero-dots button{width:10px;height:10px;border-radius:50%;border:0;background:rgba(255,255,255,.4);transition:background .25s}
+.hero-dots button.active{background:#fff}
+
+/* преимущества */
+.benefits{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;padding:56px 0}
+.benefit{display:flex;flex-direction:column;gap:12px}
+.benefit .ico{width:46px;height:46px;color:var(--accent-terracotta)}
+.benefit h3{font-family:var(--font-sans);font-size:1rem;font-weight:700}
+.benefit p{color:var(--text-muted);font-size:.9rem}
+
+/* секции */
+.section{padding:70px 0}
+.section--sand{background:var(--bg-sand)}
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:36px}
+.section-head h2{font-size:clamp(1.9rem,4vw,3rem)}
+.section-head .link{font-weight:600;color:var(--accent-terracotta);white-space:nowrap}
+
+/* карточки товара */
+.products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:24px}
+.product-card{background:var(--bg-card);border-radius:16px;overflow:hidden;border:1px solid var(--border-card);box-shadow:var(--shadow-card);transition:box-shadow .3s var(--ease),transform .3s var(--ease)}
+.product-card:hover{box-shadow:var(--shadow-hover);transform:translateY(-4px)}
+.product-card .photo{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--bg-sand-light)}
+.product-card .photo img{width:100%;height:100%;object-fit:cover;transition:transform .45s var(--ease)}
+.product-card:hover .photo img{transform:scale(1.04)}
+.product-card .body{padding:18px 18px 20px}
+.product-card h3{font-family:var(--font-sans);font-size:1rem;font-weight:700;min-height:2.6em;margin-bottom:6px}
+.product-card h3 a{color:var(--text-dark);text-decoration:none}
+.product-card .price{font-weight:700;font-size:1.1rem;color:var(--text-olive)}
+.product-card .price .old{font-weight:400;color:var(--text-muted);text-decoration:line-through;font-size:.9rem;margin-left:8px}
+.product-card .price .prefix{font-weight:400;color:var(--text-muted);font-size:.85rem}
+.badge{position:absolute;top:12px;left:12px;background:var(--bg-olive);color:#fff;font-size:.72rem;font-weight:600;padding:5px 11px;border-radius:999px;z-index:2}
+.badge--new{background:var(--badge-new)}
+
+/* коллекции */
+.collections-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px}
+.collection-card{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:16/10;display:flex;align-items:flex-end;box-shadow:var(--shadow-card)}
+.collection-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .45s var(--ease)}
+.collection-card:hover img{transform:scale(1.04)}
+.collection-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(11,31,75,.78))}
+.collection-card .info{position:relative;z-index:2;color:#fff;padding:22px}
+.collection-card .info h3{color:#fff;font-size:1.35rem;margin-bottom:4px}
+.collection-card .info p{font-size:.88rem;opacity:.9}
+
+/* студии */
+.studios{display:grid;grid-template-columns:1fr 1.2fr;gap:32px;align-items:start}
+.studio-card{background:var(--bg-card);border:1px solid var(--border-card);border-radius:16px;padding:26px;margin-bottom:16px}
+.studio-card h3{font-size:1.3rem;margin-bottom:10px}
+.studio-card .row{margin-bottom:6px;color:var(--text-muted);font-size:.94rem}
+.studio-card .row b{color:var(--text-dark)}
+.map-wrap{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--border-card);box-shadow:var(--shadow-card)}
+.map-wrap iframe{display:block;width:100%;height:440px;border:0}
+
+/* подвал */
+.site-footer{background:var(--bg-footer);color:var(--text-footer);padding:56px 0 28px}
+.site-footer a{color:var(--text-footer)}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px;margin-bottom:40px}
+.footer-col h4{font-family:var(--font-sans);font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px;opacity:.7}
+.footer-col ul{list-style:none}
+.footer-col li{margin-bottom:10px;font-size:.92rem}
+.footer-col li a{text-decoration:none;opacity:.9}
+.footer-col li a:hover{opacity:1;text-decoration:underline}
+.footer-brand{font-family:var(--font-serif);font-size:1.6rem;font-weight:700;margin-bottom:12px}
+.footer-brand em{font-style:italic;color:var(--accent-gold)}
+.footer-note{font-size:.85rem;opacity:.7;max-width:36ch}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.12);padding-top:24px;font-size:.86rem;opacity:.9}
+
+/* док контактов */
+.contact-dock{position:fixed;left:16px;bottom:16px;z-index:90;display:flex;gap:10px;flex-wrap:wrap}
+.contact-dock a{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:999px;background:var(--bg-olive);color:#fff;text-decoration:none;font-weight:600;font-size:.88rem;box-shadow:var(--shadow-hover)}
+.contact-dock a:hover{background:var(--bg-olive-hover);text-decoration:none}
+.contact-dock a.dock-msg{background:var(--accent-terracotta)}
+
+@media(max-width:1024px){
+  .benefits{grid-template-columns:repeat(2,1fr)}
+  .studios{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  .main-nav{display:none}
+  .burger{display:inline-flex;align-items:center;justify-content:center}
+  .main-nav.open{display:flex;position:absolute;top:var(--header-height);left:0;right:0;flex-direction:column;background:#fff;padding:20px clamp(16px,4vw,48px);gap:18px;border-bottom:1px solid var(--border-card);box-shadow:var(--shadow-card)}
+  .phone-pill{display:none}
+  .benefits{grid-template-columns:1fr}
+  .hero-slide{min-height:70vh}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;align-items:flex-start}
+  .section-head{flex-direction:column;align-items:flex-start}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+  .hero-track{transition:none}
+}
+
+/* Бинк: знак «Сделано вместе с Бинк» (код дословно). https://b-inc.ru */
+a.binc-made.binc-made--white,a.binc-made.binc-made--black{display:inline-flex;align-items:baseline;gap:.3em;padding:6px 0;margin:0;border:0;background:none;font:400 22px/1 Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;letter-spacing:0;text-transform:none;text-decoration:none;white-space:nowrap;-webkit-tap-highlight-color:transparent}
+a.binc-made.binc-made--white{color:#fff}
+a.binc-made.binc-made--black{color:#0b0b0c}
+a.binc-made .binc-made__muted{opacity:.72;transition:opacity .2s ease}
+a.binc-made.binc-made--solid .binc-made__muted{opacity:1}
+a.binc-made .binc-made__name{font-size:1.5em;font-weight:600;letter-spacing:-.015em;line-height:1;color:inherit}
+a.binc-made:hover .binc-made__muted,a.binc-made:focus-visible .binc-made__muted{opacity:1}
+a.binc-made:focus-visible{outline:2px solid currentColor;outline-offset:4px;border-radius:4px}
+@media (prefers-reduced-motion:reduce){a.binc-made .binc-made__muted{transition:none}}

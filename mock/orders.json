@@ -1,0 +1,29 @@
+{
+  "orders": [
+    {
+      "id": "HL-1001", "created_at": "2026-11-21T08:12:00Z", "agreed_at": "2026-11-21T08:12:00Z",
+      "status": "succeeded", "name": "Тестовый покупатель", "phone": "+7 900 000-00-01", "email": "test@example.com",
+      "method": "delivery", "zone": "По городу", "delivery_price": 350, "address": "ул. Ленина, 1, кв. 5",
+      "recipient": "self", "date": "2026-11-22", "slot": "10:30–11:30",
+      "comment": "", "items": [{"product_id": "p1", "title": "Красные розы", "price": 2708, "qty": 1}],
+      "total": 3058, "consents": {"data": true, "offer": true}
+    },
+    {
+      "id": "HL-1002", "created_at": "2026-11-21T09:30:00Z", "agreed_at": "2026-11-21T09:30:00Z",
+      "status": "pending", "name": "Тестовый покупатель", "phone": "+7 900 000-00-02", "email": "test2@example.com",
+      "method": "surprise", "zone": "Сюрприз по городу", "delivery_price": 500, "address": "",
+      "recipient_phone": "+7 900 000-00-03", "recipient_hint": "Живёт в районе Восточный",
+      "date": "2026-11-23", "slot": "14:30–15:30",
+      "comment": "Позвонить, не раскрывая сюрприз", "items": [{"product_id": "p7", "title": "Шляпная коробка «Розовая нежность»", "price": 4200, "qty": 1}],
+      "total": 4700, "consents": {"data": true, "offer": true}
+    },
+    {
+      "id": "HL-1003", "created_at": "2026-11-20T15:00:00Z", "agreed_at": "2026-11-20T15:00:00Z",
+      "status": "canceled", "name": "Тестовый покупатель", "phone": "+7 900 000-00-04", "email": "test3@example.com",
+      "method": "pickup", "branch": "Студия на Комсомольском", "delivery_price": 0, "address": "",
+      "recipient": "self", "date": "2026-11-21", "slot": "12:00–13:00",
+      "comment": "", "items": [{"product_id": "p9", "title": "Корзина «Пионы и розы»", "price": 3900, "qty": 1}],
+      "total": 3900, "consents": {"data": true, "offer": true}
+    }
+  ]
+}

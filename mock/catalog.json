@@ -1,0 +1,443 @@
+{
+  "categories": [
+    {
+      "id": "mono",
+      "slug": "monobukety",
+      "name": "Монобукеты",
+      "description": "Букеты из одного сорта цветов — лаконично и элегантно.",
+      "image_url": "assets/photos/shop/collection-monobukety.jpg",
+      "image_alt": "Монобукет из красных роз",
+      "position": 0,
+      "seo_h1": "Монобукеты с доставкой по Сургуту",
+      "seo_title": "Монобукеты — купить в Сургуте | «Хлоя»",
+      "seo_description": "Монобукеты из роз и тюльпанов с доставкой по Сургуту.",
+      "seo_text": "Монобукет — это букет из одного сорта цветов. Собираем вручную в день заказа."
+    },
+    {
+      "id": "buket",
+      "slug": "bukety",
+      "name": "Букеты",
+      "description": "Авторские и составные букеты под любой повод.",
+      "image_url": "assets/photos/shop/collection-bukety.jpg",
+      "image_alt": "Авторский букет из роз и эустомы",
+      "position": 1,
+      "seo_h1": "Букеты цветов с доставкой по Сургуту",
+      "seo_title": "Букеты цветов — купить в Сургуте | «Хлоя»",
+      "seo_description": "Авторские букеты из свежих цветов с доставкой по Сургуту в день заказа.",
+      "seo_text": "Собираем авторские и составные букеты под день рождения, годовщину или просто так."
+    },
+    {
+      "id": "korobka",
+      "slug": "shlyapnye-korobki",
+      "name": "Шляпные коробки",
+      "description": "Композиции в шляпных коробках — цветы, которые не нужно ставить в вазу.",
+      "image_url": "assets/photos/shop/collection-shlyapnye-korobki.jpg",
+      "image_alt": "Шляпная коробка с белыми хризантемами",
+      "position": 2,
+      "seo_h1": "Шляпные коробки с цветами в Сургуте",
+      "seo_title": "Шляпные коробки с цветами — Сургут | «Хлоя»",
+      "seo_description": "Композиции в шляпных коробках с доставкой по Сургуту.",
+      "seo_text": "Цветы в шляпной коробке — готовый подарок, который не требует вазы."
+    },
+    {
+      "id": "korzina",
+      "slug": "cvety-v-korzine",
+      "name": "Цветы в корзине",
+      "description": "Композиции в корзинах — уютный подарок для дома.",
+      "image_url": "assets/photos/shop/collection-cvety-v-korzine.jpg",
+      "image_alt": "Корзина с белыми розами и эвкалиптом",
+      "position": 3,
+      "seo_h1": "Цветы в корзине с доставкой в Сургуте",
+      "seo_title": "Цветы в корзине — купить в Сургуте | «Хлоя»",
+      "seo_description": "Композиции в корзинах с доставкой по Сургуту.",
+      "seo_text": "Композиции в корзинах — уютно, долго стоят, удобно дарить."
+    }
+  ],
+  "products": [
+    {
+      "id": "p1",
+      "slug": "krasnye-rozy",
+      "title": "Красные розы",
+      "category": "mono",
+      "price": 2708,
+      "price_prefix": "",
+      "description": "Классический монобукет из свежих красных роз.",
+      "image_url": "assets/photos/shop/p1-krasnye-rozy.jpg",
+      "image_thumb_url": "assets/photos/shop/p1-krasnye-rozy.jpg",
+      "image_alt": "Букет красных роз в бумаге",
+      "is_new": false,
+      "badge": "",
+      "flower_types": [
+        "розы"
+      ],
+      "size": "средний",
+      "featured": false,
+      "showcase": true,
+      "hidden": false,
+      "no_delivery": false,
+      "pickup_branches": [
+        "koms"
+      ],
+      "discount_enabled": false,
+      "discount_type": "percent",
+      "discount_value": 0,
+      "sale_price": null,
+      "discount_active": false,
+      "discount_label": "",
+      "created_at": "2026-11-01"
+    },
+    {
+      "id": "p2",
+      "slug": "vau-rozy",
+      "title": "Вау розы",
+      "category": "mono",
+      "price": 3444,
+      "price_prefix": "",
+      "description": "Роскошный монобукет из роз сорта «Вау».",
+      "image_url": "assets/photos/shop/p2-vau-rozy.jpg",
+      "image_thumb_url": "assets/photos/shop/p2-vau-rozy.jpg",
+      "image_alt": "Букет ярко-розовых роз «Вау»",
+      "is_new": false,
+      "badge": "",
+      "flower_types": [
+        "розы"
+      ],
+      "size": "средний",
+      "featured": false,
+      "showcase": false,
+      "hidden": false,
+      "no_delivery": false,
+      "pickup_branches": [
+        "koms"
+      ],
+      "discount_enabled": false,
+      "discount_type": "percent",
+      "discount_value": 0,
+      "sale_price": null,
+      "discount_active": false,
+      "discount_label": "",
+      "created_at": "2026-11-02"
+    },
+    {
+      "id": "p3",
+      "slug": "buket-51-roza",
+      "title": "Букет «51 роза»",
+      "category": "buket",
+      "price": 3550,
+      "price_prefix": "",
+      "description": "Большой авторский букет из 51 розы.",
+      "image_url": "assets/photos/shop/p3-buket-51-roza.jpg",
+      "image_thumb_url": "assets/photos/shop/p3-buket-51-roza.jpg",
+      "image_alt": "Большой букет из персиковых роз",
+      "is_new": false,
+      "badge": "Акция",
+      "flower_types": [
+        "розы"
+      ],
+      "size": "большой",
+      "featured": true,
+      "showcase": false,
+      "hidden": false,
+      "no_delivery": false,
+      "pickup_branches": [
+        "koms"
+      ],
+      "discount_enabled": true,
+      "discount_type": "amount",
+      "discount_value": 1550,
+      "sale_price": 3550,
+      "discount_active": true,
+      "discount_label": "−1 550 ₽",
+      "created_at": "2026-11-03"
+    },
+    {
+      "id": "p4",
+      "slug": "25-roz",
+      "title": "25 роз",
+      "category": "buket",
+      "price": 2500,
+      "price_prefix": "",
+      "description": "Букет из 25 роз в крафтовой упаковке.",
+      "image_url": "assets/photos/shop/p4-25-roz.jpg",
+      "image_thumb_url": "assets/photos/shop/p4-25-roz.jpg",
+      "image_alt": "Букет из 25 розовых роз",
+      "is_new": false,
+      "badge": "",
+      "flower_types": [
+        "розы"
+      ],
+      "size": "средний",
+      "featured": false,
+      "showcase": false,
+      "hidden": false,
+      "no_delivery": false,
+      "pickup_branches": [
+        "koms"
+      ],
+      "discount_enabled": false,
+      "discount_type": "percent",
+      "discount_value": 0,
+      "sale_price": null,
+      "discount_active": false,
+      "discount_label": "",
+      "created_at": "2026-11-04"
+    },
+    {
+      "id": "p5",
+      "slug": "rozy",
+      "title": "Розы",
+      "category": "mono",
+      "price": 6800,
+      "price_prefix": "от",
+      "description": "Большой монобукет роз — от 51 штуки.",
+      "image_url": "assets/photos/shop/p5-rozy.jpg",
+      "image_thumb_url": "assets/photos/shop/p5-rozy.jpg",
+      "image_alt": "Большой монобукет малиновых роз",
+      "is_new": false,
+      "badge": "",
+      "flower_types": [
+        "розы"
+      ],
+      "size": "большой",
+      "featured": false,
+      "showcase": false,
+      "hidden": false,
+      "no_delivery": false,
+      "pickup_branches": [
+        "koms"
+      ],
+      "discount_enabled": false,
+      "discount_type": "percent",
+      "discount_value": 0,
+      "sale_price": null,
+      "discount_active": false,
+      "discount_label": "",
+      "created_at": "2026-11-05"
+    },
+    {
+      "id": "p6",
+      "slug": "101-belaya-roza",
+      "title": "101 белая роза",
+      "category": "mono",
+      "price": 15035,
+      "price_prefix": "",
+      "description": "Парадный букет из 101 белой розы.",
+      "image_url": "assets/photos/shop/p6-101-belaya-roza.jpg",
+      "image_thumb_url": "assets/photos/shop/p6-101-belaya-roza.jpg",
+      "image_alt": "Букет из белых роз",
+      "is_new": false,
+      "badge": "",
+      "flower_types": [
+        "розы"
+      ],
+      "size": "большой",
+      "featured": true,
+      "showcase": false,
+      "hidden": false,
+      "no_delivery": false,
+      "pickup_branches": [
+        "koms"
+      ],
+      "discount_enabled": false,
+      "discount_type": "percent",
+      "discount_value": 0,
+      "sale_price": null,
+      "discount_active": false,
+      "discount_label": "",
+      "created_at": "2026-11-06"
+    },
+    {
+      "id": "p7",
+      "slug": "shlyapnaya-korobka-rozovaya",
+      "title": "Шляпная коробка «Розовая нежность»",
+      "category": "korobka",
+      "price": 4200,
+      "price_prefix": "",
+      "description": "Композиция из розовых роз в шляпной коробке.",
+      "image_url": "assets/photos/shop/p7-shlyapnaya-korobka-rozovaya.jpg",
+      "image_thumb_url": "assets/photos/shop/p7-shlyapnaya-korobka-rozovaya.jpg",
+      "image_alt": "Шляпная коробка с белыми цветами и розовым гипсофилом",
+      "is_new": false,
+      "badge": "",
+      "flower_types": [
+        "розы"
+      ],
+      "size": "средний",
+      "featured": true,
+      "showcase": true,
+      "hidden": false,
+      "no_delivery": false,
+      "pickup_branches": [
+        "koms"
+      ],
+      "discount_enabled": false,
+      "discount_type": "percent",
+      "discount_value": 0,
+      "sale_price": null,
+      "discount_active": false,
+      "discount_label": "",
+      "created_at": "2026-11-07"
+    },
+    {
+      "id": "p8",
+      "slug": "shlyapnaya-korobka-belyy-sad",
+      "title": "Шляпная коробка «Белый сад»",
+      "category": "korobka",
+      "price": 4500,
+      "price_prefix": "",
+      "description": "Белые розы и эвкалипт в шляпной коробке.",
+      "image_url": "assets/photos/shop/p8-shlyapnaya-korobka-belyy-sad.jpg",
+      "image_thumb_url": "assets/photos/shop/p8-shlyapnaya-korobka-belyy-sad.jpg",
+      "image_alt": "Композиция из белых роз и эвкалипта с лентой",
+      "is_new": true,
+      "badge": "Новинка",
+      "flower_types": [
+        "розы"
+      ],
+      "size": "средний",
+      "featured": false,
+      "showcase": false,
+      "hidden": false,
+      "no_delivery": false,
+      "pickup_branches": [
+        "koms"
+      ],
+      "discount_enabled": false,
+      "discount_type": "percent",
+      "discount_value": 0,
+      "sale_price": null,
+      "discount_active": false,
+      "discount_label": "",
+      "created_at": "2026-11-08"
+    },
+    {
+      "id": "p9",
+      "slug": "korzina-piony-i-rozy",
+      "title": "Корзина «Пионы и розы»",
+      "category": "korzina",
+      "price": 3900,
+      "price_prefix": "",
+      "description": "Композиция в корзине из пионов и роз. Только самовывоз.",
+      "image_url": "assets/photos/shop/p9-korzina-piony-i-rozy.jpg",
+      "image_thumb_url": "assets/photos/shop/p9-korzina-piony-i-rozy.jpg",
+      "image_alt": "Корзина с белыми розами и эвкалиптом",
+      "is_new": false,
+      "badge": "",
+      "flower_types": [
+        "розы",
+        "пионы"
+      ],
+      "size": "большой",
+      "featured": false,
+      "showcase": false,
+      "hidden": false,
+      "no_delivery": true,
+      "pickup_branches": [
+        "koms"
+      ],
+      "discount_enabled": false,
+      "discount_type": "percent",
+      "discount_value": 0,
+      "sale_price": null,
+      "discount_active": false,
+      "discount_label": "",
+      "created_at": "2026-11-09"
+    },
+    {
+      "id": "p10",
+      "slug": "korzina-fruktovyy-sad",
+      "title": "Корзина «Фруктовый сад»",
+      "category": "korzina",
+      "price": 3600,
+      "price_prefix": "",
+      "description": "Цветы и ягоды в корзине.",
+      "image_url": "assets/photos/shop/p10-korzina-fruktovyy-sad.jpg",
+      "image_thumb_url": "assets/photos/shop/p10-korzina-fruktovyy-sad.jpg",
+      "image_alt": "Корзина с белыми розами и зеленью",
+      "is_new": false,
+      "badge": "",
+      "flower_types": [
+        "розы"
+      ],
+      "size": "средний",
+      "featured": false,
+      "showcase": false,
+      "hidden": false,
+      "no_delivery": false,
+      "pickup_branches": [
+        "koms"
+      ],
+      "discount_enabled": false,
+      "discount_type": "percent",
+      "discount_value": 0,
+      "sale_price": null,
+      "discount_active": false,
+      "discount_label": "",
+      "created_at": "2026-11-10"
+    },
+    {
+      "id": "p11",
+      "slug": "monobuket-tyulpanov",
+      "title": "Монобукет тюльпанов",
+      "category": "mono",
+      "price": 2200,
+      "price_prefix": "",
+      "description": "Свежие тюльпаны — весна в вашем доме.",
+      "image_url": "assets/photos/shop/p11-monobuket-tyulpanov.jpg",
+      "image_thumb_url": "assets/photos/shop/p11-monobuket-tyulpanov.jpg",
+      "image_alt": "Монобукет розовых тюльпанов",
+      "is_new": true,
+      "badge": "Новинка",
+      "flower_types": [
+        "тюльпаны"
+      ],
+      "size": "средний",
+      "featured": false,
+      "showcase": false,
+      "hidden": false,
+      "no_delivery": false,
+      "pickup_branches": [
+        "koms"
+      ],
+      "discount_enabled": false,
+      "discount_type": "percent",
+      "discount_value": 0,
+      "sale_price": null,
+      "discount_active": false,
+      "discount_label": "",
+      "created_at": "2026-11-11"
+    },
+    {
+      "id": "p12",
+      "slug": "kompoziciya-vesna",
+      "title": "Композиция «Весна»",
+      "category": "buket",
+      "price": 3300,
+      "price_prefix": "",
+      "description": "Авторская композиция из сезонных цветов.",
+      "image_url": "assets/photos/shop/p12-kompoziciya-vesna.jpg",
+      "image_thumb_url": "assets/photos/shop/p12-kompoziciya-vesna.jpg",
+      "image_alt": "Авторский букет из роз и гвоздик",
+      "is_new": false,
+      "badge": "",
+      "flower_types": [
+        "микс"
+      ],
+      "size": "средний",
+      "featured": false,
+      "showcase": true,
+      "hidden": false,
+      "no_delivery": false,
+      "pickup_branches": [
+        "koms"
+      ],
+      "discount_enabled": false,
+      "discount_type": "percent",
+      "discount_value": 0,
+      "sale_price": null,
+      "discount_active": false,
+      "discount_label": "",
+      "created_at": "2026-11-12"
+    }
+  ]
+}

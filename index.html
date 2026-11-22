@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Хлоя — студия цветов в Сургуте · доставка день в день</title>
+<meta name="description" content="Студия цветов «Хлоя» в Сургуте: букеты, монобукеты, шляпные коробки. Доставка по Сургуту в день заказа. Комсомольский пр-т, 15.">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@400;500;600;700&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Florist","name":"Хлоя","address":{"@type":"PostalAddress","streetAddress":"Комсомольский проспект, 15","addressLocality":"Сургут","addressRegion":"Ханты-Мансийский АО — Югра","addressCountry":"RU"},"geo":{"@type":"GeoCoordinates","latitude":61.239634,"longitude":73.443997},"telephone":"+7 982 418 44 25","openingHours":"Mo-Su 09:00-20:00"}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="logo" href="index.html">Хло<em>я</em></a>
+    <nav class="main-nav" id="main-nav">
+      <a href="shop.html">Каталог</a>
+      <a href="shop.html?offers=1">Предложения</a>
+      <a href="#studios">Студии</a>
+      <a href="#delivery">Доставка</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <div class="header-actions">
+      <a class="phone-pill" href="tel:+79824184425">+7 (982) 418-44-25</a>
+      <a class="cart-btn" href="shop.html" aria-label="Корзина">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 7h12l1 13H5L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+        <span class="cart-count" style="display:none">0</span>
+      </a>
+      <button class="burger" aria-label="Меню" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="hero">
+  <div class="hero-track" id="hero-track"></div>
+  <div class="hero-dots" id="hero-dots"></div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="benefits">
+      <div class="benefit">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3c3 4 6 7 6 10a6 6 0 1 1-12 0c0-3 3-6 6-10z"/><circle cx="12" cy="13" r="2"/></svg>
+        <h3>Свежие цветы</h3>
+        <p>Букеты собираем накануне доставки, а не заранее.</p>
+      </div>
+      <div class="benefit">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg>
+        <h3>Доставка по Сургуту</h3>
+        <p>Бесплатно от 3 000 ₽ — в день заказа.</p>
+      </div>
+      <div class="benefit">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg>
+        <h3>Авторские букеты</h3>
+        <p>Собираем под повод, бюджет и настроение.</p>
+      </div>
+      <div class="benefit">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="9" width="18" height="12" rx="2"/><path d="M12 9v12M3 14h18"/><path d="M8 6h8l-2-3H10z"/></svg>
+        <h3>Упаковка и открытка</h3>
+        <p>Крафт, лента и открытка — в подарок.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--sand" id="showcase-sec">
+  <div class="container">
+    <div class="section-head"><h2>Готовы прямо сейчас</h2><a class="link" href="shop.html">Весь каталог →</a></div>
+    <div class="products-grid" id="showcase-grid"></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head"><h2>Коллекции</h2><a class="link" href="shop.html">В магазин →</a></div>
+    <div class="collections-grid" id="collections-grid"></div>
+  </div>
+</section>
+
+<section class="section section--sand" id="studios">
+  <div class="container">
+    <div class="section-head"><h2>Студия</h2></div>
+    <div class="studios">
+      <div id="studios-list"></div>
+      <div class="map-wrap" id="studio-map"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="delivery">
+  <div class="container">
+    <div class="section-head"><h2>Доставка</h2></div>
+    <div class="benefits">
+      <div class="benefit"><h3>По городу — 350 ₽</h3><p>Бесплатно от 3 000 ₽. День в день.</p></div>
+      <div class="benefit"><h3>Пригороды — от 450 ₽</h3><p>Чёрный мыс, Гидростроитель, Аэропорт, Белый Яр, Барсово, Солнечный.</p></div>
+      <div class="benefit"><h3>Сюрприз</h3><p>Не знаете адрес? Оставим букет-сюрприз — позвоним получателю.</p></div>
+      <div class="benefit"><h3>Самовывоз</h3><p>Заберите из студии на Комсомольском пр-те, 15.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" id="contacts">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand">Хло<em>я</em></div>
+        <p class="footer-note">Студия цветов в Сургуте. Собираем букеты вручную и привозим в день заказа.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Контакты</h4>
+        <ul>
+          <li><a href="tel:+79824184425">+7 (982) 418-44-25</a></li>
+          <li>Комсомольский пр-т, 15, 1 этаж</li>
+          <li>Ежедневно 09:00–20:00</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Магазин</h4>
+        <ul>
+          <li><a href="shop.html">Каталог</a></li>
+          <li><a href="shop.html?offers=1">Предложения</a></li>
+          <li><a href="#delivery">Доставка</a></li>
+          <li><a href="#studios">Студия</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Продавец и документы</h4>
+        <ul>
+          <li>[Реквизиты — этап 3]</li>
+          <li><a href="privacy.html">Политика обработки ПДн</a></li>
+          <li><a href="consent.html">Согласие на обработку</a></li>
+          <li><a href="offer.html">Публичная оферта</a></li>
+          <li><a href="requisites.html">Реквизиты</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Хлоя (Сургут)</span>
+      <!-- Бинк: знак «Сделано вместе с Бинк», белый — для тёмного фона. https://b-inc.ru -->
+      <a class="binc-made binc-made--white" href="https://b-inc.ru/" target="_blank" rel="noopener"><span class="binc-made__muted">Сделано вместе&nbsp;с</span> <span class="binc-made__name">Бинк</span></a>
+    </div>
+  </div>
+</footer>
+
+<div class="contact-dock">
+  <a href="tel:+79824184425">☎ Позвонить</a>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/app.js"></script>
+<script src="js/home-catalog.js"></script>
+</body>
+</html>

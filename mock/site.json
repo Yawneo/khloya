@@ -1,0 +1,20 @@
+{
+  "hero_slides": [
+    {
+      "image_url": "assets/photos/shop/hero-studio.jpg",
+      "mobile_image_url": "assets/photos/shop/hero-studio.jpg",
+      "alt": "Букет из розовых роз в студии «Хлоя»"
+    },
+    {
+      "image_url": "assets/photos/shop/hero-bouquet-pastel.jpg",
+      "mobile_image_url": "assets/photos/shop/hero-bouquet-pastel.jpg",
+      "alt": "Букет из персиковых роз"
+    },
+    {
+      "image_url": "assets/photos/shop/hero-bouquet-peach.jpg",
+      "mobile_image_url": "assets/photos/shop/hero-bouquet-peach.jpg",
+      "alt": "Студия цветов «Хлоя» на Комсомольском проспекте"
+    }
+  ],
+  "offers_image_url": "assets/photos/shop/offers.jpg"
+}

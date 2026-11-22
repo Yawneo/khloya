@@ -1,0 +1,112 @@
+/* Хлоя · магазин, корзина, заказ, админка */
+.shop-layout{display:grid;grid-template-columns:260px 1fr;gap:32px;align-items:start}
+.filters{background:var(--bg-card);border:1px solid var(--border-card);border-radius:16px;padding:22px;position:sticky;top:calc(var(--header-height) + 16px)}
+.filters h3{font-family:var(--font-sans);font-size:.85rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:16px}
+.filter-group{margin-bottom:20px}
+.filter-group label{display:block;font-size:.9rem;font-weight:600;margin-bottom:8px}
+.filter-group .opt{display:flex;align-items:center;gap:8px;font-size:.9rem;color:var(--text-dark);margin-bottom:7px;cursor:pointer}
+.filter-group input[type=checkbox],.filter-group input[type=radio]{accent-color:var(--accent-terracotta);width:16px;height:16px}
+.filter-group input[type=number],.filter-group input[type=search]{width:100%;padding:9px 12px;border-radius:8px;border:1.5px solid var(--border-card);font-family:inherit}
+.search-row{display:flex;gap:8px;margin-bottom:20px}
+.search-row input{flex:1;padding:11px 14px;border-radius:10px;border:1.5px solid var(--border-card);font-family:inherit}
+.toolbar{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:22px;flex-wrap:wrap}
+.toolbar .count{color:var(--text-muted);font-size:.9rem}
+.sort-select{padding:9px 12px;border-radius:10px;border:1.5px solid var(--border-card);font-family:inherit}
+
+/* диалоги */
+dialog{border:0;border-radius:18px;padding:0;box-shadow:var(--shadow-hover);max-width:92vw}
+dialog::backdrop{background:rgba(11,31,75,.55);backdrop-filter:blur(4px)}
+.dialog-head{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:1px solid var(--border-subtle)}
+.dialog-head h2{font-size:1.35rem}
+.dialog-close{width:36px;height:36px;border-radius:10px;border:1.5px solid var(--border-card);background:transparent;font-size:1.1rem}
+.dialog-body{padding:24px}
+#cart{width:640px}
+.cart-item{display:grid;grid-template-columns:64px 1fr auto auto;gap:14px;align-items:center;padding:12px 0;border-bottom:1px solid var(--border-subtle)}
+.cart-item img{width:64px;height:64px;object-fit:cover;border-radius:10px}
+.cart-item .t{font-weight:600;font-size:.92rem}
+.cart-item .p{color:var(--text-muted);font-size:.86rem}
+.qty{display:inline-flex;align-items:center;gap:2px;border:1.5px solid var(--border-card);border-radius:10px}
+.qty button{width:32px;height:32px;border:0;background:transparent;font-size:1rem}
+.cart-total{display:flex;justify-content:space-between;font-weight:700;font-size:1.15rem;padding:18px 0}
+
+/* форма заказа */
+#order{width:680px}
+.field{margin-bottom:16px}
+.field label{display:block;font-size:.85rem;font-weight:600;margin-bottom:6px}
+.field .req{color:#B91C1C}
+.field input,.field textarea,.field select{width:100%;padding:12px 14px;border-radius:10px;border:1.5px solid var(--border-card);font-family:inherit;font-size:.95rem}
+.field textarea{resize:vertical}
+.field .hint{font-size:.78rem;color:var(--text-muted);margin-top:5px}
+.field .err{display:none;font-size:.8rem;color:#B91C1C;margin-top:5px}
+.field.invalid input,.field.invalid textarea{border-color:#B91C1C}
+.field.invalid .err{display:block}
+.method-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:18px}
+.method-tab{border:1.5px solid var(--border-card);border-radius:12px;padding:14px;text-align:left;background:var(--bg-card);font-weight:600}
+.method-tab.active{border-color:var(--accent-terracotta);background:var(--bg-olive-light)}
+.method-tab small{display:block;font-weight:400;color:var(--text-muted);font-size:.78rem;margin-top:3px}
+.radio-row{display:flex;gap:8px;align-items:center;font-size:.9rem;margin-bottom:8px;cursor:pointer}
+.radio-row input{accent-color:var(--accent-terracotta)}
+.calendar{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-bottom:14px}
+.calendar .dow{font-size:.72rem;text-align:center;color:var(--text-muted);text-transform:uppercase}
+.calendar button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;min-height:48px;border-radius:10px;border:1.5px solid var(--border-card);background:var(--bg-card);font-size:.9rem;font-weight:600}
+.calendar button small{font-size:.62rem;font-weight:400;opacity:.7;text-transform:uppercase}
+.calendar button.other{opacity:.3}
+.calendar button.selected{background:var(--bg-olive);color:#fff;border-color:var(--bg-olive)}
+.calendar button:disabled{opacity:.25;cursor:default}
+.slots{display:flex;flex-wrap:wrap;gap:8px}
+.slots button{padding:9px 14px;border-radius:999px;border:1.5px solid var(--border-card);background:var(--bg-card);font-size:.85rem}
+.slots button.selected{background:var(--accent-terracotta);color:#fff;border-color:var(--accent-terracotta)}
+.slots button:disabled{opacity:.3;cursor:default}
+.slot-note{font-size:.78rem;color:var(--text-muted);margin:8px 0 14px}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:.85rem;margin-bottom:12px;color:var(--text-muted)}
+.consent input{margin-top:3px;accent-color:var(--accent-terracotta)}
+.consent a{color:var(--accent-terracotta)}
+.order-summary{background:var(--bg-sand-light);border-radius:12px;padding:16px;margin-bottom:16px;font-size:.92rem}
+.order-summary .line{display:flex;justify-content:space-between;margin-bottom:6px}
+.order-summary .total{font-weight:700;font-size:1.1rem;border-top:1px solid var(--border-card);padding-top:10px;margin-top:8px}
+#order-result{font-size:1rem}
+
+/* детальный просмотр товара */
+#detail{width:560px}
+.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.detail-grid img{width:100%;border-radius:12px;aspect-ratio:4/3;object-fit:cover}
+.detail-grid .price{font-size:1.4rem;font-weight:700;color:var(--text-olive);margin:8px 0}
+.detail-grid .desc{color:var(--text-muted);font-size:.92rem;margin-bottom:12px}
+.availability{font-size:.88rem;color:var(--text-muted);background:var(--bg-sand-light);border-radius:10px;padding:12px;margin-bottom:16px}
+.availability b{color:var(--text-dark)}
+
+/* админка */
+.admin-bar{background:var(--bg-olive);color:#fff;padding:10px 0;display:none}
+.admin-bar.show{display:block}
+.admin-bar .container{display:flex;align-items:center;justify-content:space-between;gap:14px}
+.admin-login{max-width:440px;margin:40px auto;background:var(--bg-card);border-radius:16px;padding:30px;border:1px solid var(--border-card)}
+.admin-login h2{margin-bottom:14px}
+.admin-tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:22px;border-bottom:1px solid var(--border-card);padding-bottom:0}
+.admin-tab{padding:12px 18px;border:0;background:transparent;font-weight:600;color:var(--text-muted);border-bottom:2px solid transparent}
+.admin-tab.active{color:var(--text-olive);border-bottom-color:var(--accent-terracotta)}
+.admin-panel{display:none}
+.admin-panel.active{display:block}
+.admin-table{width:100%;border-collapse:collapse;font-size:.9rem}
+.admin-table th,.admin-table td{padding:10px 12px;border-bottom:1px solid var(--border-subtle);text-align:left;vertical-align:top}
+.admin-table th{font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;color:var(--text-muted)}
+.admin-table img{width:48px;height:48px;object-fit:cover;border-radius:8px}
+.flag-btn{padding:6px 12px;border-radius:999px;border:1.5px solid var(--border-card);background:var(--bg-card);font-size:.78rem;font-weight:600}
+.flag-btn.on{background:var(--bg-olive);color:#fff;border-color:var(--bg-olive)}
+.status-badge{padding:4px 10px;border-radius:999px;font-size:.75rem;font-weight:700;display:inline-block}
+.status-pending{background:#FEF3C7;color:#92400E}
+.status-succeeded{background:#D1FAE5;color:#065F46}
+.status-canceled{background:#FEE2E2;color:#991B1B}
+.status-mismatch{background:#FEF2F2;color:#9B1C1C}
+.admin-note{font-size:.85rem;color:var(--text-muted);margin-bottom:18px}
+.admin-memo{background:var(--bg-sand-light);border-radius:12px;padding:16px;font-size:.88rem;margin-bottom:20px}
+.admin-memo summary{font-weight:700;cursor:pointer}
+.admin-memo p{margin-top:10px;color:var(--text-muted)}
+
+@media(max-width:900px){
+  .shop-layout{grid-template-columns:1fr}
+  .filters{position:static}
+  .detail-grid{grid-template-columns:1fr}
+  .method-tabs{grid-template-columns:1fr}
+  #cart,#order{width:100%}
+  .cart-item{grid-template-columns:52px 1fr auto;grid-template-rows:auto auto}
+}

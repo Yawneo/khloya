@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Каталог — Хлоя, Сургут</title>
+<meta name="description" content="Коллекция цветов студии «Хлоя» в Сургуте.">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@400;500;600;700&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a class="logo" href="index.html">Хло<em>я</em></a>
+    <nav class="main-nav" id="main-nav">
+      <a href="shop.html">Каталог</a>
+      <a href="shop.html?offers=1">Предложения</a>
+      <a href="index.html#studios">Студии</a>
+      <a href="index.html#delivery">Доставка</a>
+      <a href="index.html#contacts">Контакты</a>
+    </nav>
+    <div class="header-actions">
+      <a class="phone-pill" href="tel:+79824184425">+7 (982) 418-44-25</a>
+      <a class="cart-btn" href="shop.html" aria-label="Корзина">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 7h12l1 13H5L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+        <span class="cart-count" style="display:none">0</span>
+      </a>
+      <button class="burger" aria-label="Меню" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<main class="section">
+  <div class="container">
+    <nav style="font-size:.85rem;color:var(--text-muted);margin-bottom:10px"><a href="index.html">Главная</a> / <a href="shop.html">Каталог</a> / <span id="crumb">…</span></nav>
+    <h1 id="h1" style="font-size:clamp(1.9rem,4vw,3rem);margin-bottom:12px">…</h1>
+    <p id="cat-desc" style="color:var(--text-muted);max-width:60ch;margin-bottom:36px"></p>
+    <div class="products-grid" id="grid"></div>
+    <p id="seo-text" style="color:var(--text-muted);max-width:70ch;margin-top:40px;line-height:1.7"></p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col"><div class="footer-brand">Хло<em>я</em></div><p class="footer-note">Студия цветов в Сургуте.</p></div>
+      <div class="footer-col"><h4>Контакты</h4><ul><li><a href="tel:+79824184425">+7 (982) 418-44-25</a></li><li>Комсомольский пр-т, 15</li></ul></div>
+      <div class="footer-col"><h4>Магазин</h4><ul><li><a href="shop.html">Каталог</a></li><li><a href="shop.html?offers=1">Предложения</a></li></ul></div>
+      <div class="footer-col"><h4>Документы</h4><ul><li><a href="privacy.html">Политика ПДн</a></li><li><a href="consent.html">Согласие</a></li><li><a href="offer.html">Оферта</a></li><li><a href="requisites.html">Реквизиты</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Хлоя (Сургут)</span>
+      <!-- Бинк: знак «Сделано вместе с Бинк», белый — для тёмного фона. https://b-inc.ru -->
+      <a class="binc-made binc-made--white" href="https://b-inc.ru/" target="_blank" rel="noopener"><span class="binc-made__muted">Сделано вместе&nbsp;с</span> <span class="binc-made__name">Бинк</span></a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/api.js"></script>
+<script src="js/app.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', async ()=>{
+  const c = await api('/api/catalog');
+  const slug = new URLSearchParams(location.search).get('slug');
+  const cat = (c.categories||[]).find(x=>x.slug===slug) || (c.categories||[])[0];
+  if(!cat) return;
+  document.title = cat.seo_title || cat.name + ' — Хлоя';
+  const d = document.querySelector('meta[name=description]'); if(d) d.content = cat.seo_description || '';
+  document.getElementById('crumb').textContent = cat.name;
+  document.getElementById('h1').textContent = cat.seo_h1 || cat.name;
+  document.getElementById('cat-desc').textContent = cat.description || '';
+  document.getElementById('seo-text').textContent = cat.seo_text || '';
+  const eff = p => (p.discount_active && p.sale_price!=null) ? p.sale_price : p.price;
+  const products = (c.products||[]).filter(p=>p.category===cat.id && !p.hidden);
+  document.getElementById('grid').innerHTML = products.map(p=>`
+    <article class="product-card">
+      <div class="photo">${p.badge?`<span class="badge">${p.badge}</span>`:''}<img src="${p.image_url}" alt="${p.image_alt||p.title}" loading="lazy"></div>
+      <div class="body"><h3><a href="product.html?slug=${p.slug}">${p.title}</a></h3><div class="price">${formatPrice(eff(p))}</div>
+      <button class="btn btn--primary btn--small" data-add="${p.id}" style="margin-top:12px">В корзину</button></div>
+    </article>`).join('') || '<p style="color:var(--text-muted)">В этой коллекции пока нет товаров.</p>';
+  document.getElementById('grid').querySelectorAll('[data-add]').forEach(b=>b.addEventListener('click', ()=>{ Cart.add(b.dataset.add); b.textContent='✓ Добавлено'; setTimeout(()=>b.textContent='В корзину',1200); }));
+});
+</script>
+</body>
+</html>

@@ -16,9 +16,9 @@ const IMG = {
 const MOCK_DB = {
   site: {
     hero_slides: [
-      { image_url: 'assets/photos/shop/hero-bouquet-pastel.jpg', mobile_image_url: 'assets/photos/shop/hero-bouquet-pastel.jpg', alt: 'Букет из розовых роз в студии «Хлоя»' },
-      { image_url: 'assets/photos/shop/hero-bouquet-peach.jpg',  mobile_image_url: 'assets/photos/shop/hero-bouquet-peach.jpg',  alt: 'Букет из персиковых роз' },
-      { image_url: 'assets/photos/shop/hero-studio.jpg',         mobile_image_url: 'assets/photos/shop/hero-studio.jpg',         alt: 'Студия цветов «Хлоя» на Комсомольском проспекте' }
+      { image_url: 'assets/photos/shop/hero-bouquet-red.jpg',   mobile_image_url: 'assets/photos/shop/hero-bouquet-red.jpg',   alt: 'Букет красных роз' },
+      { image_url: 'assets/photos/shop/hero-bouquet-vau.jpg',   mobile_image_url: 'assets/photos/shop/hero-bouquet-vau.jpg',   alt: 'Букет ярко-розовых роз «Вау»' },
+      { image_url: 'assets/photos/shop/hero-bouquet-tulip.jpg', mobile_image_url: 'assets/photos/shop/hero-bouquet-tulip.jpg', alt: 'Монобукет розовых тюльпанов' }
     ],
     offers_image_url: 'assets/photos/shop/offers.jpg'
   },

@@ -148,7 +148,7 @@ h1,h2,h3,h4{font-family:var(--font-serif);font-weight:600;line-height:1.1;letter
 .footer-bottom{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.12);padding-top:24px;font-size:.86rem;opacity:.9}
 
 /* док контактов */
-.contact-dock{position:fixed;left:16px;bottom:16px;z-index:90;display:flex;gap:10px;flex-wrap:wrap}
+.contact-dock{position:fixed;left:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:90;display:flex;gap:10px;flex-wrap:wrap}
 .contact-dock a{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:999px;background:var(--bg-olive);color:#fff;text-decoration:none;font-weight:600;font-size:.88rem;box-shadow:var(--shadow-hover)}
 .contact-dock a:hover{background:var(--bg-olive-hover);text-decoration:none}
 .contact-dock a.dock-msg{background:var(--accent-terracotta)}
@@ -168,6 +168,7 @@ h1,h2,h3,h4{font-family:var(--font-serif);font-weight:600;line-height:1.1;letter
   .footer-grid{grid-template-columns:1fr}
   .footer-bottom{flex-direction:column;align-items:flex-start}
   .section-head{flex-direction:column;align-items:flex-start}
+  .map-wrap iframe{height:320px}
 }
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}

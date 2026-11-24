@@ -292,7 +292,7 @@ function bindOrder(){
   const zbox = document.getElementById('zones');
   zbox.innerHTML = [...(DELIVERY.zones||[])].map(z=>`<label class="radio-row"><input type="radio" name="zone" value="${z.id}" data-name="${z.name}" ${z.id==='city'?'checked':''}> ${z.name} — ${formatPrice(z.price)}</label>`).join('');
   document.getElementById('surprise-zones').innerHTML = (DELIVERY.surprise_zones||[]).map(z=>`<label class="radio-row"><input type="radio" name="zone" value="${z.id}" data-name="${z.name}"> ${z.name} — ${formatPrice(z.price)}</label>`).join('');
-  document.getElementById('branches').innerHTML = (DELIVERY.pickup||[]).map(b=>`<label class="radio-row"><input type="radio" name="branch" value="${b.id}" data-name="${b.name}" checked> ${b.name} · ${b.address} · ${b.hours}</label>`).join('');
+  document.getElementById('branches').innerHTML = (DELIVERY.pickup||[]).map((b,i)=>`<label class="branch-card"><input type="radio" name="branch" value="${b.id}" data-name="${b.name}" ${i===0?'checked':''}><span class="branch-info"><b>${b.name}</b><span>${b.address}</span><span>${b.hours}</span></span></label>`).join('');
   // галочка «получу сам»
   const selfChk = document.getElementById('o-self');
   const recField = document.getElementById('field-recipient-delivery');
